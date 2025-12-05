@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+  
+  <button class="music-toggle" id="musicToggle" aria-label="Pausar música">
+    <span class="music-icon">🎵</span>
+  </button>
+
+  <div class="bg-texture" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <p class="eyebrow">Un regalo para vos</p>
+      <h1>Una carta para mi amor</h1>
+      <p class="sub">Haz clic en el corazon para abrirla.</p>
+    </header>
+
+    <main class="scene">
+      <button class="heart" id="heart" aria-label="Abrir carta">
+        <span class="shine"></span>
+        <span class="pulse"></span>
+        <span class="icon">❤</span>
+      </button>
+      <div class="note note-small">
+        <p>Con cariño tu novio Jere</p>
+      </div>
+    </main>
+
+    <section class="gallery">
+      <h2 class="gallery-title">Nuestros Momentos</h2>
+      <div class="gallery-grid">
+        <div class="photo-frame">
+          <img src="assets/foto1.jpg" alt="Nuestro momento juntos" />
+          <p class="photo-caption">Dulce</p>
+        </div>
+        <div class="photo-frame">
+          <img src="assets/foto2.jpg" alt="Momento feliz" />
+          <p class="photo-caption">Oyente</p>
+        </div>
+        <div class="photo-frame">
+          <img src="assets/foto3.gif" alt="Juntos" />
+          <p class="photo-caption">Protectora</p>
+        </div>
+        <div class="photo-frame">
+          <img src="assets/foto4.jpg" alt="Aventura" />
+          <p class="photo-caption">Compañia</p>
+        </div>
+        <div class="photo-frame">
+          <img src="assets/foto5.jpg" alt="Momento dulce" />
+          <p class="photo-caption">Alegria</p>
+        </div>
+        <div class="photo-frame">
+          <img src="assets/foto6.jpg" alt="Felicidad" />
+          <p class="photo-caption">Amor</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="letter" role="dialog" aria-modal="true" aria-labelledby="title">
+      <button class="close" id="close" aria-label="Cerrar carta">×</button>
+      <p class="eyebrow">Carta para Nayelis</p>
+      <h2 id="title">Gracias por existir</h2>
+      <p>Hola mi amor,</p>
+      <p>
+        Hace algunos años escuché una canción que me hizo pensar en vos.
+        Vos todavía no estabas en mi vida, pero esa canción hablaba sobre
+        regalar con amor aquello que uno sabe hacer mejor, o lo que sabe hacer.
+        En ese momento jamás imaginé que algún día conocería a alguien a quien quisiera dedicarle algo tan tierno como una de mis canciones favoritas.
+        Pero entonces llegaste vos.
+      </p>
+      <p>
+        Te dedico con todo mi corzon, esta carta virtual, que hice con mucho amor
+        y pensando en vos. Espero que te guste, y que sepas que cada palabra
+        que escribi aca, viene desde lo mas profundo de mi ser.
+      </p>
+      <p>Con todo mi amor,</p>
+      <p class="sig">Jere 💗</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
