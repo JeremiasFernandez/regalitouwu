@@ -72,3 +72,18 @@ document.addEventListener("click", startOnInteraction);
 window.addEventListener("load", () => {
   playMusic();
 });
+
+// Gift box interaction
+const giftBox = document.getElementById("giftBox");
+const giftContent = document.getElementById("giftContent");
+const closeGift = document.getElementById("closeGift");
+
+giftBox.addEventListener("click", () => {
+  giftBox.style.display = "none";
+  giftContent.hidden = false;
+});
+
+closeGift.addEventListener("click", () => {
+  giftContent.hidden = true;
+  giftBox.style.display = "block";
+});
