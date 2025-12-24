@@ -87,3 +87,23 @@ closeGift.addEventListener("click", () => {
   giftContent.hidden = true;
   giftBox.style.display = "block";
 });
+
+// Book page turning
+const bookPageFront = document.getElementById("bookPageFront");
+const bookPageBack = document.getElementById("bookPageBack");
+const nextPageBtn = document.getElementById("nextPageBtn");
+const prevPageBtn = document.getElementById("prevPageBtn");
+
+let currentPage = 1;
+
+nextPageBtn.addEventListener("click", () => {
+  bookPageFront.hidden = true;
+  bookPageBack.hidden = false;
+  currentPage = 2;
+});
+
+prevPageBtn.addEventListener("click", () => {
+  bookPageBack.hidden = true;
+  bookPageFront.hidden = false;
+  currentPage = 1;
+});
