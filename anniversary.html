@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Primer aniversario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Special+Elite&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="anniversary.css" />
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <audio id="bg-music" src="music2.mp3" loop preload="auto"></audio>
+  <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">
+    <span class="music-toggle__icon" aria-hidden="true">
+      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+    </span>
+    <span class="music-toggle__label">Música</span>
+  </button>
+
+  <!-- Formitas vintage de fondo -->
+  <div class="bg-motifs" aria-hidden="true">
+    <svg class="motif motif--heart" style="top:4%; left:6%; --i:0; --r:-6deg;" viewBox="0 0 100 100"><path d="M50 85 C20 60,5 40,5 22 C5 8,18 2,30 8 C40 13,50 25,50 25 C50 25,60 13,70 8 C82 2,95 8,95 22 C95 40,80 60,50 85 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--star" style="top:11%; left:88%; --i:1; --r:10deg;" viewBox="0 0 100 100"><path d="M50 5 L61 38 L96 38 L67 59 L78 92 L50 71 L22 92 L33 59 L4 38 L39 38 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--swirl" style="top:19%; left:4%; --i:2; --r:-3deg;" viewBox="0 0 100 60"><path d="M2 30 Q20 5 40 30 T78 30" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="90" cy="30" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--stamp" style="top:27%; left:91%; --i:3; --r:-4deg;" viewBox="0 0 100 100"><rect x="8" y="8" width="84" height="84" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/><circle cx="50" cy="50" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    <svg class="motif motif--heart motif--sm" style="top:36%; left:90%; --i:4; --r:8deg;" viewBox="0 0 100 100"><path d="M50 85 C20 60,5 40,5 22 C5 8,18 2,30 8 C40 13,50 25,50 25 C50 25,60 13,70 8 C82 2,95 8,95 22 C95 40,80 60,50 85 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+    <svg class="motif motif--envelope" style="top:44%; left:5%; --i:5; --r:6deg;" viewBox="0 0 100 70"><rect x="4" y="4" width="92" height="62" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 4 L50 42 L96 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--compass" style="top:53%; left:92%; --i:6; --r:0deg;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M50 12 L58 46 L50 88 L42 46 Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    <svg class="motif motif--star motif--sm" style="top:61%; left:4%; --i:7; --r:12deg;" viewBox="0 0 100 100"><path d="M50 5 L61 38 L96 38 L67 59 L78 92 L50 71 L22 92 L33 59 L4 38 L39 38 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+    <svg class="motif motif--swirl" style="top:70%; left:90%; --i:8; --r:-3deg;" viewBox="0 0 100 60"><path d="M2 30 Q20 5 40 30 T78 30" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="90" cy="30" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--heart" style="top:78%; left:6%; --i:9; --r:-6deg;" viewBox="0 0 100 100"><path d="M50 85 C20 60,5 40,5 22 C5 8,18 2,30 8 C40 13,50 25,50 25 C50 25,60 13,70 8 C82 2,95 8,95 22 C95 40,80 60,50 85 Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--stamp" style="top:86%; left:90%; --i:10; --r:-4deg;" viewBox="0 0 100 100"><rect x="8" y="8" width="84" height="84" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/><circle cx="50" cy="50" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    <svg class="motif motif--envelope" style="top:94%; left:5%; --i:11; --r:6deg;" viewBox="0 0 100 70"><rect x="4" y="4" width="92" height="62" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 4 L50 42 L96 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <svg class="motif motif--compass motif--sm" style="top:2%; left:42%; --i:12; --r:2deg;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M50 12 L58 46 L50 88 L42 46 Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    <svg class="motif motif--star motif--sm" style="top:96%; left:48%; --i:13; --r:-8deg;" viewBox="0 0 100 100"><path d="M50 5 L61 38 L96 38 L67 59 L78 92 L50 71 L22 92 L33 59 L4 38 L39 38 Z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+  </div>
+
+  <div class="page-shell">
+    <header class="anniversary-header">
+      <a class="back-link" href="index.html">← Volver al inicio</a>
+      <p class="eyebrow">Linea de tiempo</p>
+      <h1>Primer aniversario</h1>
+      <p class="subtitle">Un recuerdo de nuestro camino hasta hoy</p>
+    </header>
+
+    <main class="content-wrap">
+
+      <!-- Contador en vivo -->
+      <section class="counter-section" aria-label="Tiempo que llevamos juntos">
+        <p class="eyebrow accent">Desde el 22 de agosto de 2025</p>
+        <h2 class="section-title">Llevamos juntos</h2>
+
+        <div class="counter-grid">
+          <div class="counter-box">
+            <span class="counter-value" id="count-years">0</span>
+            <span class="counter-label">Años</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-value" id="count-days">0</span>
+            <span class="counter-label">Días</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-value" id="count-minutes">0</span>
+            <span class="counter-label">Minutos</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-value" id="count-seconds">0</span>
+            <span class="counter-label">Segundos</span>
+            <span class="counter-sublabel">quedaba re grande kjj</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Línea de tiempo -->
+      <section class="timeline-section" aria-label="Línea de tiempo de nuestra historia">
+        <p class="eyebrow accent">Nuestro primer añito uwu</p>
+        <h2 class="section-title">Nuestra linea de tiempo</h2>
+
+        <div class="timeline">
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="un dia y ya casados uwu">1</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">22 AGO 2025</span>
+                <span class="timeline-date">22 de agosto de 2025</span>
+                <p>Nuestra primera charla</p>
+              </div>
+
+              <p class="timeline-note">El dia que te conoci, fue muy especial. Fue un comienzo raro, pero divertido.
+                Sin dudas en ese momento no tenia idea de lo que iba a pasar, pero me alegro que todo haya pasado asi.
+                Desde el primer momento te me hiciste una persona super divertida, que me seguia el juego, que me hacia reir y me hacia sentir comodo.
+                Ahora que llevamos mucho tiempo juntos puedo entender porque simepre fuiste tan linda conmigo y por que me hiciste sentir tan especial.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="jugando felices como tortolitos enamorados jiji">2</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">24 AGO 2025</span>
+                <span class="timeline-date">24 de agosto de 2025</span>
+                <p>Primeras partidas de plato</p>
+              </div>
+
+              <p class="timeline-note">No tengo tantos recuerdos de nuestras primeras partidas. Estoy casi seguro que yo me la pasaba mandando
+                para jugar al uno. Lo que si me acuerdo es de algunas de esas primeras charlas en plato, creo que practicamente uno de nuestros primeros
+                coititos fue en plato JSKAJAASJK solo q no fue coito, solo nos hablabamos de besar y esas cosas. Fue tierno. Siempre me gusto jugar con vos
+                aunque siempre me ganes.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="que linda que sos">3</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">28 AGO 2025</span>
+                <span class="timeline-date">28 de agosto de 2025</span>
+                <p>Primera charla por WhatsApp</p>
+              </div>
+
+              <p class="timeline-note">Recuerdo que los primeros dias en WhatsApp sentia que me ODIABAS. No se por que, sentia que en la app me hablabas
+                mas lindo y que en whatsapp eras mas seria. Pero con el paso de los dias me di cuenta que no era asi. Con el tiempo me fui acostumbrando
+                a hablarte todos los dias, a decirte buenos dias, buenas noches, a hablarte lindo, contarte cosas de mi dia a dia. Cosas que hoy en dia son
+                imprescindibles para mi. Te amo tanto y agradezco tanto todo lo que paso.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="La llamada mas corta de la historia">4</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">30 AGO 2025</span>
+                <span class="timeline-date">30 de agosto de 2025</span>
+                <p>Primera llamada improvisada</p>
+              </div>
+
+              <p class="timeline-note">JHKDJKA me acuerdo de esta llamada con mucha curiosidad. Recuerdo mas que nada que en ese momento
+                no estaba absolutamente nada acostumbrado a tu acento, entonces me costaba un poco entenderte. Pero me acuerdo de eso con mucho 
+                cariño y ternura. Fue una llamada que duro a lo mucho 5 minutos, pero me hizo sentir mas cercano a vos, por primera vez como que te senti
+                real y eso me parecio bastante lindo. 
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="primeras trasnochaditas.">5</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">31 AGO 2025</span>
+                <span class="timeline-date">31 de agosto de 2025</span>
+                <p>Primer ravesito</p>
+              </div>
+
+              <p class="timeline-note">Me acuerdo cuando escuchabamos musica, te mostre 11 y 6 y despues se volvio tu cancion favorita. Quiza si
+                no te hubiera mostrado esa cancion no estarias tan enamorada de mi como ahora uwu. Fueron momentos muy tiernos y muy tempranos
+                de nuestra relacion que me hacian sentir cada vez mas feliz y enamorado de vos, aunque en ese momento todavia no lo sabia al 100%. Pero
+                estaba en camino.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="La llamada luchada">6</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">12 OCT 2025</span>
+                <span class="timeline-date">12 de octubre de 2025</span>
+                <p>Primera llamada</p>
+              </div>
+
+              <p class="timeline-note">Estos dias fueron muy tiernos, me acuerdo que nosotros en chat nos deciamos de todo, pero en llamada
+                estabamos bastante mas timidos, nos costaba decir que nos queriamos, cosas tiernas, y mas. Me acuerdo que todo cambio el dia
+                que jugamos al jueguito de la granja de discord, y ese fue el dia que me di cuenta lo mucho que te queria y lo feliz que me hacias
+                sentir. Desde ese dia en adelante todo fue a mejor y me di cuenta que queria estar con vos para siempre.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="Cumplí años con vos ya cerca del corazón.">7</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">23 OCT 2025</span>
+                <span class="timeline-date">23 de octubre de 2025</span>
+                <p>Mis 21 años</p>
+              </div>
+
+              <p class="timeline-note">Ese habia sido un mes complicado para mi, por el tema del hackeo, estaba estresado por la facultad y el futuro,
+                y encima me sentia poco querido. Pero vos me hiciste sentir tan acompañado, tan valorado. He hacias dar razones para seguir. 
+                Me acuerdo que me regalaste el minecraft y esa cartita tan linda que hoy sigo guardando. Me habia puesto muy contento lo que decia.
+                Sin duda fuiste lo mejor de mi cumpleaños.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="Construyendo cosas juntos, aunque sea en un juego.">8</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">1 DIC 2025</span>
+                <span class="timeline-date">1 de diciembre de 2025</span>
+                <p>Primeras partidas de Roblox</p>
+              </div>
+
+              <p class="timeline-note">La verdad no estoy seguro de esta data. Encontre fotos de algunas de nuestras partidas de roblox
+                en este dia, el dia que jugamos al juego de los barcos que ibamos juntitos, y algun que otro juego. Pero no es lo que importa,
+                lo importante es que en roblox siempre me das muchisima ternura por tu skin chiquitita JKDJAK y me encanta jugarlo con vos.
+                El unico problema con roblox es que ese juego esta podrido y eso no ayuda mucho. Pero me encantaria volverlo a jugar con vos.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="Dos palabras que cambiaron todo.">9</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">22 DIC 2025</span>
+                <span class="timeline-date">22 de diciembre de 2025</span>
+                <p>Nuestro primer "Te amo"</p>
+              </div>
+
+              <p class="timeline-note">Me acuerdo que estuve semanas o meses pensando en como decir eso, si estaba seguro de hacerlo. Tenia
+                miedo que vos no sintieras lo mismo, y que eso arruinaria las cosas. Pero me alegro que haya salido bien. Esos sin dudas
+                fueron los dias que recuerdo con mas amor y cariño. Me acuerdo lo nervioso que estuve ese dia y que trate varias veces de decirtelo
+                y no podia. Me acuerdo lo feliz que estabas, del cariño que me diste despues, parecia que saltabas de alegria. Fue un dia muy especial y muy lindo sin duda.
+                Te lo vuelvo a decir ahora y siempre, te amo.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="Algo que se podía tocar, no solo sentir.">10</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">21 MAR 2025</span>
+                <span class="timeline-date">21 de marzo de 2025</span>
+                <p>Primer regalo físico (tomo de SBR)</p>
+              </div>
+
+              <p class="timeline-note">Que alegria ese regalo. Es el regalo que mas aprecio. Me acuerdo que ese dia me dabas mensajes misteriosos
+                y que yo tenia algunas sospechas de lo que podia ser. No estaba seguro si era el libro de archivo de las tormentas o eran tomos de steel ball run, porque
+                esos dias te hablaba mucho de eso. Cuando me llego estaba super nervioso porque no estaba seguro si llegaria o no, ademas, en ese momento justo me tenia que ir
+                y yo estaba super nervioso. Por suerte llego justo antes de que me fuera. Cuando lo vi, fui el tipo mas feliz del universo. Estaba tan agradecido y tan contento.
+                No podia creer que hayas tenido ese gesto tan lindo conmigo de mandarme algo del mas alla. Se que a veces cuando recibo cosas no parezco
+                contento, pero SI LO ESTOY, solo que me cuesta expresarlo en el momento. Soy muy malo reaccionando a sorpresas. Pero me encanto, te amo.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="Por fin poder verte la cara mientras hablábamos.">11</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">17 ABR 2026</span>
+                <span class="timeline-date">17 de abril de 2026</span>
+                <p>Nuestra primera videollamada</p>
+              </div>
+
+              <p class="timeline-note">Que increible. Habiamos estado meses hablando de esto, yo con miedo de que no te guste yo. 
+                Lo hablamos y discutimos y al final, cuando te vi, me parecias tan linda que me quede sin palabras. Pase de no querer
+                nunca videollamada a querer siempre solo para verte. 
+                La primera videollamada casi no te pude ver en realidad, estabas totalmente tapada por los filtros y yo medio que tambien, pero
+                me acuerdo que me encantaba verte. Ya despues, cuando la hicimos con anticipacion, verte tan hermosa fue un gozo. Me parecias la chica
+                mas hermosa del mundo, con tu pelito negro, tus ojos hermosos, tu sonrisa hermosa, tu carita tan tierna, quede enloquecido. Asi que
+                transformaste algo que odio en algo que amo.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot" tabindex="0" data-tooltip="Otro año más de vos en el mundo, suerte para mí.">12</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card">
+                <span class="timeline-postmark">9 AGO 2026</span>
+                <span class="timeline-date">9 de agosto de 2026</span>
+                <p>Tus 21 años</p>
+              </div>
+
+              <p class="timeline-note">La verdad no se que decir de tu cumpleaños, pero fue lindo pasar mi primer cumpleaños por vos.
+                Lo que si es que admito que estuve mucho tiempo sin saber que regalarte y siento que debi preparar con mas tiempo el regalo, pero bueno
+                yo de todas formas lo hice con todo mi amor. Te amo.
+              </p>
+
+            </div>
+          </article>
+
+          <article class="timeline-item timeline-item--highlight">
+            <div class="timeline-dot timeline-dot--highlight" tabindex="0" data-tooltip="Un año entero, y siento que recién empieza.">13</div>
+            <div class="timeline-content">
+
+              <div class="timeline-card timeline-card--highlight">
+                <span class="timeline-postmark timeline-postmark--highlight">22 AGO 2026</span>
+                <span class="timeline-date">22 de agosto de 2026</span>
+                <p>Primer aniversario</p>
+              </div>
+
+              <p class="timeline-note">Feliz aniversario mi amor, al fin llegamos al día.</p>
+
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Estadísticas del chat -->
+      <section class="stats-section" aria-label="Estadísticas de nuestro chat">
+        <p class="eyebrow accent">jiji</p>
+        <h2 class="section-title">Estadísticas de nuestro chat</h2>
+
+        <div class="stats-panel">
+
+          <div class="stats-hero">
+            <span class="stats-hero__value">252.005</span>
+            <span class="stats-hero__label">Mensajes en total</span>
+          </div>
+
+          <div class="stats-ledger">
+            <div class="ledger-row">
+              <span class="ledger-row__label">Mensajes míos</span>
+              <span class="ledger-row__leader" aria-hidden="true"></span>
+              <span class="ledger-row__value">126.889</span>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-row__label">Mensajes tuyos</span>
+              <span class="ledger-row__leader" aria-hidden="true"></span>
+              <span class="ledger-row__value">125.116</span>
+            </div>
+            <div class="ledger-row">
+              <span class="ledger-row__label">Promedio de mensajes al día</span>
+              <span class="ledger-row__leader" aria-hidden="true"></span>
+              <span class="ledger-row__value">705</span>
+            </div>
+          </div>
+
+          <p class="stats-subtitle">Cantidad de veces que dijimos...</p>
+
+          <div class="word-cloud">
+            <span class="word-cloud__item word-cloud__item--xl">amor <sup>47.909</sup></span>
+            <span class="word-cloud__item word-cloud__item--lg">mi amor <sup>17.497</sup></span>
+            <span class="word-cloud__item word-cloud__item--lg">te amo <sup>7.541</sup></span>
+            <span class="word-cloud__item word-cloud__item--sm">te quiero <sup>1.479</sup></span>
+            <span class="word-cloud__item word-cloud__item--sm">tqm <sup>18</sup></span>
+          </div>
+
+          <p class="stats-subtitle stats-subtitle--split">¿Quién dijo más veces "te amo"?</p>
+
+          <div class="split-stat">
+            <div class="split-stat__item">
+              <span class="split-stat__value">3.967</span>
+              <span class="split-stat__name">Jere</span>
+            </div>
+            <span class="split-stat__divider" aria-hidden="true">·</span>
+            <div class="split-stat__item">
+              <span class="split-stat__value">3.574</span>
+              <span class="split-stat__name">Nay</span>
+            </div>
+          </div>
+
+          <div class="stats-highlight">
+            <span class="stats-highlight__label">El día que más hablamos</span>
+            <span class="stats-highlight__value">25 de enero</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Carta -->
+      <section class="letter-section" aria-label="Espacio para una carta">
+        <p class="eyebrow accent">Carta para mi amor</p>
+        <h2 class="section-title">Escribí lo que sientes</h2>
+        <p class="letter-intro">Porque cada palabra que salga de tu corazón hace que este amor se vuelva más hermoso.</p>
+
+        <div class="letter-card">
+          <div class="letter-card__seal" aria-hidden="true">
+            <svg viewBox="0 0 60 60" width="34" height="34">
+              <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="2" />
+              <path d="M30 20 C25 15, 15 18, 15 27 C15 35, 23 40, 30 45 C37 40, 45 35, 45 27 C45 18, 35 15, 30 20 Z"
+                    fill="currentColor" />
+            </svg>
+          </div>
+
+          <p class="letter-card__salutation">Mi amor,</p>
+
+          <p class="letter-card__body">
+            Con esta carta quiero conmemorar y agradecer todo nuestro camino juntos: desde que nos conocimos, pasando por nuestra amistad, hasta llegar a ser lo que somos hoy. <br /><br />
+
+            Estoy muy feliz por todo lo que hicimos y por todo lo que vivimos juntos. Nuestras noches de desvelo, nuestros chistes internos, nuestros momentos complicados, nuestros problemas y también todas las soluciones que encontramos juntos. Agradezco absolutamente todo, cada momento, cada experiencia y cada recuerdo. Y no me arrepiento de nada. <br /><br />
+
+            Nunca pensé que podría llegar a ser tan feliz con alguien, incluso a pesar de la distancia. Siento un amor demasiado profundo por vos y por todo lo que construimos juntos. Sos una persona increíble, y me hace inmensamente feliz haberte conocido. De hecho, me emociona un poquito estar escribiendo esto porque, mientras lo hago, no puedo evitar pensar en lo feliz que me haces dia a dia. <br /><br />
+                      
+            Desde aquel día en pdb hasta hoy, siento que fueron los días en los que más acompañado y querido me sentí en toda mi vida. Y por eso quiero agradecerte de verdad, por estar, por compartir conmigo y por hacerme inmensamente feliz.
+                      
+            Te amo. Te amo muchísimo, y siempre lo voy a hacer. <br /><br />
+                      
+            Gracias por tanto, mi amor. ❤️ <br /><br />
+                      
+            Feliz aniversario uwu <br /><br />
+                      
+            Espero que sean muchos, muchísimos más.
+          </p>
+
+          <p class="letter-card__signature">Con todo mi amor, tu novio.</p>
+        </div>
+      </section>
+
+
+  <script src="anniversary.js"></script>
+</body>
+</html>
